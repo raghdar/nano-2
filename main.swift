@@ -61,7 +61,6 @@ struct byLevel: Hashable {
         self.Work = Work
     }
 }
-
 struct byHours: Hashable {
     var Title: String
     var Openings: Int
@@ -94,7 +93,6 @@ struct byLocation: Hashable {
         self.Work = Work
     }
 }
-
 struct byWork: Hashable {
     var Title: String
     var Openings: Int
@@ -112,7 +110,6 @@ struct byWork: Hashable {
     }
 }
 
-
 class applicationInfo {
     var dateApplied: String
     var dateClosed: Int
@@ -126,7 +123,7 @@ class applicationInfo {
     
 }
 
-
+//jobs 
 let job0 = jobs (Title:"Data Analyst", Openings: 2, Level: "Entry Level", Hours: "Full-time", Location:"Jeddah, Saudi Arabia", Work:"On-Site")
 let job1 = jobs (Title:"Specialist Recruiter", Openings: 1, Level: "Mid Level", Hours: "Full-time", Location:"Riyadh, Saudi Arabia", Work:"On-Site")
 let job2 = jobs (Title:"UX Researcher", Openings: 10, Level: "Mid Level", Hours: "Part-time", Location:"Dammam, Saudi Arabia", Work:"Remote")
@@ -138,19 +135,19 @@ let job7 = jobs (Title:"iOS Developer", Openings: 10, Level: "Entry Level", Hour
 let job8 = jobs (Title:"Marketing Specialist", Openings: 2, Level: "Senior Level", Hours: "Full-time", Location:"Jeddah, Saudi Arabia", Work:"On-Site")
 let job9 = jobs (Title:"Customer Service Specialist", Openings: 2, Level: "Mid Level", Hours: "Part-time", Location:"Khobar, Saudi Arabia", Work:"Remote")
 
-
+//locations
 let western = [job0, job3, job5, job7, job8, job4]
 let northern = [job6]
 let eastern = [job2, job9]
 let central = [job1]
 let all: Set<jobs> = [job0, job1, job2, job3, job4, job5, job6, job7, job8, job9]
 
-
+//career level
 let entry = [job0, job3, job4, job6, job7]
 let mid = [job1, job2, job5, job9]
 let senior = [job8]
 
-
+//a function that greets the applicant
 func greet(person: String) -> String {
     let greeting = "Hello, " + person + "!👋"
     return greeting
@@ -168,7 +165,7 @@ print("What is your career level?")
 print("Entry\t->\t0️⃣\nMid\t\t->\t1️⃣\nSenior\t->\t2️⃣")
 var careerLevel = readLine()!
 
-
+//Informs the applicant that their profile was created. And displays the applicant's profile
 switch Int(careerLevel)!{
     case 0:
         //(Int(careerLevel)!==0)
@@ -204,7 +201,7 @@ switch Int(careerLevel)!{
         print("Invalid Entry! Try again")
 }
 
-    
+//prompts the applicant to enter values w.r.t. their need    
 print("Would you like to narrow your search results with filters? If yes, enter 1️⃣.\nIf you'd like to view all available jobs, enter 2️⃣.\nEnter 3️⃣ to Exit.  ")
     
 //userInput=readLine()
@@ -303,7 +300,8 @@ switch Int(userInput){
 }
 }
 
-print("Please enter the title of the job you want to apply to")
+//prompts the user to enter the title of the job that they want to apply for
+print("Please enter the title of the job you want to apply for")
 var userInput=readLine()
 
 var choice = userInput!
@@ -329,7 +327,7 @@ if let userInput = readLine(){
                     print("\n")
                     i+=1
                 }
-                print("Please enter the title of the job you want to apply to")
+                print("Please enter the title of the job you want to apply for")
                 let userInput=readLine()
 
                 let choice = userInput!
@@ -344,7 +342,7 @@ if let userInput = readLine(){
                     print("\n")
                     i+=1
                 }
-                print("Please enter the title of the job you want to apply to")
+                print("Please enter the title of the job you want to apply for")
                 let userInput=readLine()
 
                 let choice = userInput!
@@ -359,7 +357,7 @@ if let userInput = readLine(){
                     print("\n")
                     i+=1
                 }
-                print("Please enter the title of the job you want to apply to")
+                print("Please enter the title of the job you want to apply for")
                 let userInput=readLine()
 
                 let choice = userInput!
@@ -374,7 +372,7 @@ if let userInput = readLine(){
                     print("\n")
                     i+=1
                 }
-                print("Please enter the title of the job you want to apply to")
+                print("Please enter the title of the job you want to apply for")
                 let userInput=readLine()
 
                 let choice = userInput!
@@ -393,7 +391,7 @@ if let userInput = readLine(){
                     print("\n")
                     i+=1
                 }
-                print("Please enter the title of the job you want to apply to")
+                print("Please enter the title of the job you want to apply for")
                 let userInput=readLine()
 
                 let choice = userInput!
@@ -409,7 +407,7 @@ if let userInput = readLine(){
                     print("\n")
                     i+=1
                 }
-                print("Please enter the title of the job you want to apply to")
+                print("Please enter the title of the job you want to apply for")
                 let userInput=readLine()
 
                 let choice = userInput!
@@ -425,7 +423,7 @@ if let userInput = readLine(){
                     print("\n")
                     i+=1
                 }
-                print("Please enter the title of the job you want to apply to")
+                print("Please enter the title of the job you want to apply for")
                 let userInput=readLine()
 
                 let choice = userInput!
@@ -538,17 +536,5 @@ print("See you soon!")
 //var cols = arr[0].count; //to check the number of columns
 //print (rows)
 //print(cols)
-//
-
-
-
-
-
-
-
-
-
-
-
 
 }
