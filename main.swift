@@ -154,7 +154,7 @@ func greet(person: String) -> String {
 }
 
 
-
+print("Welcome to Jobs!💼")
 print("Please Enter Your Name:")
 var name = readLine()!
 print(greet(person:name))
