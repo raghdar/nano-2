@@ -123,7 +123,7 @@ class applicationInfo {
     
 }
 
-//jobs 
+//jobs
 let job0 = jobs (Title:"Data Analyst", Openings: 2, Level: "Entry Level", Hours: "Full-time", Location:"Jeddah, Saudi Arabia", Work:"On-Site")
 let job1 = jobs (Title:"Specialist Recruiter", Openings: 1, Level: "Mid Level", Hours: "Full-time", Location:"Riyadh, Saudi Arabia", Work:"On-Site")
 let job2 = jobs (Title:"UX Researcher", Openings: 10, Level: "Mid Level", Hours: "Part-time", Location:"Dammam, Saudi Arabia", Work:"Remote")
@@ -140,7 +140,7 @@ let western = [job0, job3, job5, job7, job8, job4]
 let northern = [job6]
 let eastern = [job2, job9]
 let central = [job1]
-let all: Set<jobs> = [job0, job1, job2, job3, job4, job5, job6, job7, job8, job9]
+let all = [job0, job1, job2, job3, job4, job5, job6, job7, job8, job9]
 
 //career level
 let entry = [job0, job3, job4, job6, job7]
@@ -201,15 +201,18 @@ switch Int(careerLevel)!{
         print("Invalid Entry! Try again")
 }
 
-//prompts the applicant to enter values w.r.t. their need    
-print("Would you like to narrow your search results with filters? If yes, enter 1️⃣.\nIf you'd like to view all available jobs, enter 2️⃣.\nEnter 3️⃣ to Exit.  ")
-    
+//prompts the applicant to enter values w.r.t. their need
+print("Would you like to narrow your search results with filters? If yes, enter 1️⃣.\nIf you'd like to view all available jobs, enter 2️⃣.\nEnter 4️⃣ to Exit.  ")
+
 //userInput=readLine()
+var userChoice = ""
+repeat{
 if let userInput = readLine(){
+    userChoice = userInput;
 switch Int(userInput){
 
         case 1:
-        print("How would you like to sort the jobs?\nBy location: Enter 1️⃣\nBy Required Level: Enter 2️⃣\nBy Hours of Work:  Enter 3️⃣\nEnter 4️⃣ to Exit")
+        print("How would you like to sort the jobs?\nBy location: Enter 1️⃣\nBy Required Level: Enter 2️⃣\nEnter 4️⃣ to Exit")
         var userInput=readLine()
         if(Int(userInput!)==1){
             print("Choose an area:\nNorthern -> 1️⃣\tEastern -> 2️⃣\tWestern -> 3️⃣\tCentral -> 4️⃣")
@@ -291,170 +294,330 @@ switch Int(userInput){
         }
         
         case 2:
-        print(all)
+        //print(all)
+        var i = 0
+        while (i<10){
+            print(all[i])
+            print("\n")
+            i+=1
+        }
+        
         case 4:
         print ("See you later!👋")
         default:
         print ("See you later!👋")
             
 }
+    print("Please enter the title of the job you want to apply for")
+    if let userInput=readLine(){
+
+    let choice = userInput
+    print("Great \(name) you have successfully applied to \(choice) position!✅")
+    }
+    print("Enter 1️⃣ to apply for other jobs, or 2️⃣ to quit.")
+    repeat{
+    if let userInput = readLine(){
+    //userInput = readLine()
+        userChoice = userInput
+        switch Int(userInput) {
+        case 1:
+            print("How would you like to sort the jobs?\nBy location: Enter 1️⃣\nBy Required Level: Enter 2️⃣\nEnter 4️⃣ to Exit")
+            var userInput=readLine()
+            switch Int(userInput!){
+            case 1:
+                print("Choose an area:\nNorthern -> 1️⃣\tEastern -> 2️⃣\tWestern -> 3️⃣\tCentral -> 4️⃣")
+                userInput=readLine()
+                if(Int(userInput!)==1){
+                    //print(northern)
+                    var i = 0
+                    while (i<1){
+                        print(northern[i])
+                        print("\n")
+                        i+=1
+                    }
+                    print("Please enter the title of the job you want to apply for")
+                    let userInput=readLine()
+
+                    let choice = userInput!
+                    print("Great \(name) you have successfully applied to \(choice) position!✅")
+
+                }
+                else if(Int(userInput!)==2){
+                   //print(eastern)
+                    var i = 0
+                    while (i<2){
+                        print(eastern[i])
+                        print("\n")
+                        i+=1
+                    }
+                    print("Please enter the title of the job you want to apply for")
+                    let userInput=readLine()
+
+                    let choice = userInput!
+                    print("Great \(name) you have successfully applied to \(choice) position!✅")
+
+                }
+                else if(Int(userInput!)==3){
+                    //print(western)
+                    var i = 0
+                    while (i<6){
+                        print(western[i])
+                        print("\n")
+                        i+=1
+                    }
+                    print("Please enter the title of the job you want to apply for")
+                    let userInput=readLine()
+
+                    let choice = userInput!
+                    print("Great \(name) you have successfully applied to \(choice) position!✅")
+
+                }
+                else if (Int(userInput!)==1){
+                    //print(central)
+                    var i = 0
+                    while (i<1){
+                        print(central[i])
+                        print("\n")
+                        i+=1
+                    }
+                    print("Please enter the title of the job you want to apply for")
+                    let userInput=readLine()
+
+                    let choice = userInput!
+                    print("Great \(name) you have successfully applied to \(choice) position!✅")
+
+                }
+                else{print("Invalid Entry")}
+            case 2:
+                print("Choose the career level:\nEntry Level -> 1️⃣\tMid Level -> 2️⃣\tSenior Level-> 3️⃣\t")
+                let temp = readLine()
+                if(Int(temp!)==1){
+                    //print(entry)
+                    var i = 0
+                    while (i<5){
+                        print(entry[i])
+                        print("\n")
+                        i+=1
+                    }
+                    print("Please enter the title of the job you want to apply for")
+                    let userInput=readLine()
+
+                    let choice = userInput!
+                    print("Great \(name) you have successfully applied to \(choice) position!✅")
+
+
+                }
+                else if(Int(temp!)==2){
+                    //print(mid)
+                    var i = 0
+                    while (i<4){
+                        print(mid[i])
+                        print("\n")
+                        i+=1
+                    }
+                    print("Please enter the title of the job you want to apply for")
+                    let userInput=readLine()
+
+                    let choice = userInput!
+                    print("Great \(name) you have successfully applied to \(choice) position!✅")
+
+
+                }
+                else if(Int(temp!)==3){
+                    //print(senior)
+                    var i = 0
+                    while (i<1){
+                        print(senior[i])
+                        print("\n")
+                        i+=1
+                    }
+                    print("Please enter the title of the job you want to apply for")
+                    let userInput=readLine()
+
+                    let choice = userInput!
+                    print("Great \(name) you have successfully applied to \(choice) position!✅")
+
+
+                }
+                else{
+                    fallthrough
+                }
+            default:
+                print("See you!👋")
+            }
+        case 4:
+            print("See you soon!👋")
+
+        default:
+            print("See you soon!👋")
+        }
+    }
+    }while userChoice != "2"
 }
+}while userChoice != "4"
 
 //prompts the user to enter the title of the job that they want to apply for
-print("Please enter the title of the job you want to apply for")
-var userInput=readLine()
+//print("Please enter the title of the job you want to apply for")
+//var userInput=readLine()
+//
+//var choice = userInput!
+//print("Great \(name) you have successfully applied to \(choice) position!✅")
+//
+//print("Enter 1️⃣ to apply for other jobs, or 2️⃣ to quit.")
+//repeat{
+//if let userInput = readLine(){
+////userInput = readLine()
+//    userChoice = userInput
+//    switch Int(userInput) {
+//    case 1:
+//        print("How would you like to sort the jobs?\nBy location: Enter 1️⃣\nBy Required Level: Enter 2️⃣\nBy Hours of Work:  Enter 3️⃣\nEnter 4️⃣ to Exit")
+//        var userInput=readLine()
+//        switch Int(userInput!){
+//        case 1:
+//            print("Choose an area:\nNorthern -> 1️⃣\tEastern -> 2️⃣\tWestern -> 3️⃣\tCentral -> 4️⃣")
+//            userInput=readLine()
+//            if(Int(userInput!)==1){
+//                //print(northern)
+//                var i = 0
+//                while (i<1){
+//                    print(northern[i])
+//                    print("\n")
+//                    i+=1
+//                }
+//                print("Please enter the title of the job you want to apply for")
+//                let userInput=readLine()
+//
+//                let choice = userInput!
+//                print("Great \(name) you have successfully applied to \(choice) position!✅")
+//
+//            }
+//            else if(Int(userInput!)==2){
+//               //print(eastern)
+//                var i = 0
+//                while (i<2){
+//                    print(eastern[i])
+//                    print("\n")
+//                    i+=1
+//                }
+//                print("Please enter the title of the job you want to apply for")
+//                let userInput=readLine()
+//
+//                let choice = userInput!
+//                print("Great \(name) you have successfully applied to \(choice) position!✅")
+//
+//            }
+//            else if(Int(userInput!)==3){
+//                //print(western)
+//                var i = 0
+//                while (i<6){
+//                    print(western[i])
+//                    print("\n")
+//                    i+=1
+//                }
+//                print("Please enter the title of the job you want to apply for")
+//                let userInput=readLine()
+//
+//                let choice = userInput!
+//                print("Great \(name) you have successfully applied to \(choice) position!✅")
+//
+//            }
+//            else if (Int(userInput!)==1){
+//                //print(central)
+//                var i = 0
+//                while (i<1){
+//                    print(central[i])
+//                    print("\n")
+//                    i+=1
+//                }
+//                print("Please enter the title of the job you want to apply for")
+//                let userInput=readLine()
+//
+//                let choice = userInput!
+//                print("Great \(name) you have successfully applied to \(choice) position!✅")
+//
+//            }
+//            else{print("Invalid Entry")}
+//        case 2:
+//            print("Choose the career level:\nEntry Level -> 1️⃣\tMid Level -> 2️⃣\tSenior Level-> 3️⃣\t")
+//            let temp = readLine()
+//            if(Int(temp!)==1){
+//                //print(entry)
+//                var i = 0
+//                while (i<5){
+//                    print(entry[i])
+//                    print("\n")
+//                    i+=1
+//                }
+//                print("Please enter the title of the job you want to apply for")
+//                let userInput=readLine()
+//
+//                let choice = userInput!
+//                print("Great \(name) you have successfully applied to \(choice) position!✅")
+//
+//
+//            }
+//            else if(Int(temp!)==2){
+//                //print(mid)
+//                var i = 0
+//                while (i<4){
+//                    print(mid[i])
+//                    print("\n")
+//                    i+=1
+//                }
+//                print("Please enter the title of the job you want to apply for")
+//                let userInput=readLine()
+//
+//                let choice = userInput!
+//                print("Great \(name) you have successfully applied to \(choice) position!✅")
+//
+//
+//            }
+//            else if(Int(temp!)==3){
+//                //print(senior)
+//                var i = 0
+//                while (i<1){
+//                    print(senior[i])
+//                    print("\n")
+//                    i+=1
+//                }
+//                print("Please enter the title of the job you want to apply for")
+//                let userInput=readLine()
+//
+//                let choice = userInput!
+//                print("Great \(name) you have successfully applied to \(choice) position!✅")
+//
+//
+//            }
+//            else{
+//                fallthrough
+//            }
+//        default:
+//            print("See you!👋")
+//        }
+//    case 4:
+//        print("See you soon!👋")
+//
+//    default:
+//        print("See you soon!👋")
+//    }
+//}
+//}while userChoice != "2"
+//print("Enter 1️⃣ to apply for other jobs, or 2️⃣ to quit.")
+//
+//repeat{
+//if let userInput = readLine(){
+//    userChoice = userInput
+//    switch Int(userInput){
+//    case 1:
+//        print("function needed")
+//    case 2:
+//        print("Thank you for applying ✅\nYou will be to view your application once they are updated by the employers.\n")
+//    default:
+//        print("default")
+//    }
+//}
+//}while userChoice != "2"
 
-var choice = userInput!
-print("Great \(name) you have successfully applied to \(choice) position!✅")
-
-print("Enter 1️⃣ to apply for other jobs, or 2️⃣ to quit.")
-
-if let userInput = readLine(){
-//userInput = readLine()
-    switch Int(userInput) {
-    case 1:
-        print("How would you like to sort the jobs?\nBy location: Enter 1️⃣\nBy Required Level: Enter 2️⃣\nBy Hours of Work:  Enter 3️⃣\nEnter 4️⃣ to Exit")
-        var userInput=readLine()
-        switch Int(userInput!){
-        case 1:
-            print("Choose an area:\nNorthern -> 1️⃣\tEastern -> 2️⃣\tWestern -> 3️⃣\tCentral -> 4️⃣")
-            userInput=readLine()
-            if(Int(userInput!)==1){
-                //print(northern)
-                var i = 0
-                while (i<1){
-                    print(northern[i])
-                    print("\n")
-                    i+=1
-                }
-                print("Please enter the title of the job you want to apply for")
-                let userInput=readLine()
-
-                let choice = userInput!
-                print("Great \(name) you have successfully applied to \(choice) position!✅")
-
-            }
-            else if(Int(userInput!)==2){
-               //print(eastern)
-                var i = 0
-                while (i<2){
-                    print(eastern[i])
-                    print("\n")
-                    i+=1
-                }
-                print("Please enter the title of the job you want to apply for")
-                let userInput=readLine()
-
-                let choice = userInput!
-                print("Great \(name) you have successfully applied to \(choice) position!✅")
-
-            }
-            else if(Int(userInput!)==3){
-                //print(western)
-                var i = 0
-                while (i<6){
-                    print(western[i])
-                    print("\n")
-                    i+=1
-                }
-                print("Please enter the title of the job you want to apply for")
-                let userInput=readLine()
-
-                let choice = userInput!
-                print("Great \(name) you have successfully applied to \(choice) position!✅")
-
-            }
-            else if (Int(userInput!)==1){
-                //print(central)
-                var i = 0
-                while (i<1){
-                    print(central[i])
-                    print("\n")
-                    i+=1
-                }
-                print("Please enter the title of the job you want to apply for")
-                let userInput=readLine()
-
-                let choice = userInput!
-                print("Great \(name) you have successfully applied to \(choice) position!✅")
-
-            }
-            else{print("Invalid Entry")}
-        case 2:
-            print("Choose the career level:\nEntry Level -> 1️⃣\tMid Level -> 2️⃣\tSenior Level-> 3️⃣\t")
-            let temp = readLine()
-            if(Int(temp!)==1){
-                //print(entry)
-                var i = 0
-                while (i<5){
-                    print(entry[i])
-                    print("\n")
-                    i+=1
-                }
-                print("Please enter the title of the job you want to apply for")
-                let userInput=readLine()
-
-                let choice = userInput!
-                print("Great \(name) you have successfully applied to \(choice) position!✅")
-
-
-            }
-            else if(Int(temp!)==2){
-                //print(mid)
-                var i = 0
-                while (i<4){
-                    print(mid[i])
-                    print("\n")
-                    i+=1
-                }
-                print("Please enter the title of the job you want to apply for")
-                let userInput=readLine()
-
-                let choice = userInput!
-                print("Great \(name) you have successfully applied to \(choice) position!✅")
-
-
-            }
-            else if(Int(temp!)==3){
-                //print(senior)
-                var i = 0
-                while (i<1){
-                    print(senior[i])
-                    print("\n")
-                    i+=1
-                }
-                print("Please enter the title of the job you want to apply for")
-                let userInput=readLine()
-
-                let choice = userInput!
-                print("Great \(name) you have successfully applied to \(choice) position!✅")
-
-
-            }
-            else{
-                fallthrough
-            }
-        default:
-            print("See you!👋")
-        }
-    case 4:
-        print("See you soon!👋")
-
-    default:
-        print("See you soon!👋")
-    }
-}
-print("Enter 1️⃣ to apply for other jobs, or 2️⃣ to quit.")
-if let userInput = readLine(){
-    switch Int(userInput){
-    case 1:
-        print("function needed")
-    case 2:
-        print("Thank you for applying ✅\nYou will be to view your application once they are updated by the employers.\n")
-    default:
-        print("default")
-}
-    
 print("See you soon!")
 //print("Thank you for applying ✅\nYou will be to view your application once they are updated by the employers.\n")
 
@@ -537,4 +700,4 @@ print("See you soon!")
 //print (rows)
 //print(cols)
 
-}
+
